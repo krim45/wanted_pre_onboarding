@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     position: relative;
     overflow: hidden;
 
-    ::before {
+    :before {
       content: '';
       position: absolute;
       top: 0;
@@ -27,6 +27,10 @@ const Wrapper = styled.div`
       background-color: purple;
       transition: 0.3s linear;
       transform: ${props => props.isToggle ? 'translateX(0%)' : 'translateX(-100%)'};
+    }
+
+    :hover {
+      cursor: pointer;
     }
   }
 
