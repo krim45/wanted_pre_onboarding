@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
 `;
 
 const Button = styled.button`
