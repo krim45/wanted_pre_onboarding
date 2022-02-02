@@ -71,7 +71,7 @@ const Modal = () => {
       {isModal ? (
         <LightBox isModal={isModal} onClick={modalHandler}>
           <Box role='dialog' onClick={(e) => e.stopPropagation()}>
-            <button onClick={modalHandler}>X</button>
+            <button onClick={modalHandler}>&#10006;</button>
             <div>HELLO CODESTATES!</div>
           </Box>
         </LightBox>) : null}
