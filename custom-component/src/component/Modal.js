@@ -49,14 +49,13 @@ const Box = styled.div`
     font-weight: 700;
     cursor: pointer;
   }
-  
+
   > div {
     font-size: 20px;
     font-weight: 700;
     color: purple;
   }
-`
-
+`;
 
 const Modal = () => {
   const [isModal, setIsModal] = useState(false);
@@ -70,11 +69,12 @@ const Modal = () => {
       <Button onClick={modalHandler}>Open Modal</Button>
       {isModal ? (
         <LightBox isModal={isModal} onClick={modalHandler}>
-          <Box role='dialog' onClick={(e) => e.stopPropagation()}>
+          <Box onClick={(e) => e.stopPropagation()}>
             <button onClick={modalHandler}>&#10006;</button>
             <div>HELLO CODESTATES!</div>
           </Box>
-        </LightBox>) : null}
+        </LightBox>
+      ) : null}
     </Wrapper>
   );
 };

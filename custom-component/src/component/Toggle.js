@@ -47,6 +47,7 @@ const Wrapper = styled.div`
 
   .text {
     margin: 10px 0;
+    font-weight: 700;
   }
 `;
 
