@@ -60,6 +60,7 @@ const Tab = () => {
       <TabContainer>
         {tabMenu.map((item, idx) => (
           <TabMenu
+            key={idx}
             className={tab === idx ? 'selected' : ''}
             onClick={() => tabHandler(idx)}
           >
