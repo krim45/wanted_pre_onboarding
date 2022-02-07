@@ -63,6 +63,7 @@ const Input = ({ label, value, inputValueHandler }) => {
           defaultValue={newValue}
           onChange={handleValue}
           onBlur={handlerBlur}
+          autoComplete="off"
         />
       ) : (
         <Text onClick={() => setIsEdit(true)}>{newValue}</Text>
