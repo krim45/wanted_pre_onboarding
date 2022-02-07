@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     position: relative;
     overflow: hidden;
 
-    :before {
+    ::before {
       content: '';
       position: absolute;
       top: 0;
@@ -26,7 +26,8 @@ const Wrapper = styled.div`
       bottom: 0;
       background-color: purple;
       transition: 0.3s linear;
-      transform: ${props => props.isToggle ? 'translateX(0%)' : 'translateX(-100%)'};
+      transform: ${(props) =>
+        props.isToggle ? 'translateX(0%)' : 'translateX(-100%)'};
     }
 
     :hover {
@@ -41,7 +42,7 @@ const Wrapper = styled.div`
     border-radius: 50%;
     position: absolute;
     top: 5px;
-    left: ${props => props.isToggle ? '50px' : '5px'};
+    left: ${(props) => (props.isToggle ? '50px' : '5px')};
     transition: 0.3s linear;
   }
 
@@ -56,15 +57,15 @@ const Toggle = () => {
 
   const toggleHandler = () => {
     setIsToggle(!isToggle);
-  }
+  };
 
   return (
     <Wrapper isToggle={isToggle}>
-      <div className='toggle-container' onClick={toggleHandler}>
-        <div className='toggle-circle'></div>
+      <div className="toggle-container" onClick={toggleHandler}>
+        <div className="toggle-circle"></div>
       </div>
 
-      <div className='text'>Toggle Switch {isToggle ? 'ON' : 'OFF'}</div>
+      <div className="text">Toggle Switch {isToggle ? 'ON' : 'OFF'}</div>
     </Wrapper>
   );
 };
