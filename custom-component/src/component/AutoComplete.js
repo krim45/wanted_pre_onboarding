@@ -88,8 +88,12 @@ const AutoComplete = () => {
   const [options, setOptions] = useState(dropdownOptions);
   const [selected, setSelected] = useState(-1);
 
-  const changeInputValue = (e) => {
+  const getValue = (e) => {
     const value = e.target.textContent || e.target.value;
+    changeInputValue(value);
+  };
+
+  const changeInputValue = (value) => {
     const filterRegex = new RegExp(value, 'i');
     const newOptions = dropdownOptions.filter((option) =>
       filterRegex.test(option)
@@ -114,8 +118,8 @@ const AutoComplete = () => {
         selected < 0 ? options.length - 1 : (selected - 1) % options.length;
       setSelected(idx);
     } else if (e.key === 'Enter') {
-      setInputValue(options[selected]);
-      setSelected(null);
+      changeInputValue(options[selected]);
+      setSelected(-1);
     }
   };
 
@@ -125,7 +129,7 @@ const AutoComplete = () => {
         <input
           type="text"
           value={inputValue}
-          onChange={changeInputValue}
+          onChange={getValue}
           onKeyDown={(e) => {
             if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
               e.preventDefault();
@@ -138,11 +142,7 @@ const AutoComplete = () => {
       {hasText ? (
         <DropdownOptions>
           {options.map((option, idx) => (
-            <Option
-              key={idx}
-              onClick={changeInputValue}
-              selected={selected === idx}
-            >
+            <Option key={idx} onClick={getValue} selected={selected === idx}>
               {option}
             </Option>
           ))}
