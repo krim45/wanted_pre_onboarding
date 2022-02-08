@@ -10,13 +10,13 @@ const Wrapper = styled.div`
 `;
 
 const InputContainer = styled.div`
-  width: 85%;
-  height: 15%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 85%;
   border: 1px solid lightgray;
   border-radius: 10px;
   padding: 10px;
-  overflow: hidden;
 
   &:focus-within {
     border: 1px solid purple;
@@ -24,6 +24,7 @@ const InputContainer = styled.div`
 
   > input {
     border: none;
+    margin: 5px;
     font-size: 16px;
 
     :focus {
@@ -34,16 +35,14 @@ const InputContainer = styled.div`
 
 const TagContainer = styled.ul`
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   list-style: none;
 
   > li {
     background-color: purple;
     border-radius: 10px;
-    margin-right: 10px;
     padding: 8px;
-    display: flex;
-    white-space: nowrap;
+    margin: 5px;
 
     span {
       font-weight: 700;
