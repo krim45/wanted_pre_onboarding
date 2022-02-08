@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 코스 (wanted_pre_onboarding)
 
-# 공통
+## 공통
 
 Create React App을 활용했습니다. <br/>
 CSS는 Styled-components를 활용했습니다.<br/>
