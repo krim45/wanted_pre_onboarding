@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 
 const InputContainer = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   width: 85%;
   border: 1px solid lightgray;
