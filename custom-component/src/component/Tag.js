@@ -44,7 +44,7 @@ const TagContainer = styled.ul`
     padding: 8px;
     display: flex;
     white-space: nowrap;
-    
+
     span {
       font-weight: 700;
       color: #e9e9e9;
@@ -64,7 +64,7 @@ const Tag = () => {
   const [tags, setTags] = useState(['Pre Onboarding']);
 
   const addTag = (e) => {
-    if (e.target.value && !tags.includes(e.target.value)) {
+    if (e.key === 'Enter' && e.target.value && !tags.includes(e.target.value)) {
       const newTags = [...tags, e.target.value];
       e.target.value = '';
 
@@ -94,7 +94,7 @@ const Tag = () => {
         <input
           type="text"
           placeholder="Press enter to add tags"
-          onKeyUp={(e) => (e.key === 'Enter' ? addTag(e) : null)}
+          onKeyUp={addTag}
         />
       </InputContainer>
     </Wrapper>
