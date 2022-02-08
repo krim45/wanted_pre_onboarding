@@ -11,6 +11,8 @@ CSS는 Styled-components를 활용했습니다.<br/>
 - 터미널에서 custom-component 폴더로 이동 후 `npm ci`를 입력해 패키지를 설치합니다.
 - `npm run start`를 입력해 구현한 결과물을 확인할 수 있습니다.
 
+### 👉 [App 실행 바로가기](https://krim45.github.io/wanted_pre_onboarding/)
+
 ## Toggle
 
 ![Toggle](https://user-images.githubusercontent.com/82519180/152779675-ae308cbb-4373-4a93-acab-241c6d87bcbc.gif)
