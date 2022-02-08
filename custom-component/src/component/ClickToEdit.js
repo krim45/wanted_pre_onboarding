@@ -31,6 +31,10 @@ const Text = styled.div`
   width: 200px;
   height: 40px;
   margin: 0 20px;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const Input = ({ label, value, inputValueHandler }) => {
