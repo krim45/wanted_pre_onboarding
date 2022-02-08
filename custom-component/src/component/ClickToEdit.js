@@ -60,7 +60,7 @@ const Input = ({ label, value, inputValueHandler }) => {
           type="text"
           name={label}
           ref={inputRef}
-          defaultValue={newValue}
+          value={newValue}
           onChange={handleValue}
           onBlur={handlerBlur}
           autoComplete="off"
