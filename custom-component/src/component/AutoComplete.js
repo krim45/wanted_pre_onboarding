@@ -86,14 +86,9 @@ const AutoComplete = () => {
   const [inputValue, setInputValue] = useState('');
   const [hasText, setHasText] = useState(false);
   const [options, setOptions] = useState(dropdownOptions);
-  const [selected, setSelected] = useState(-1);
 
-  const getValue = (e) => {
+  const changeInputValue = (e) => {
     const value = e.target.textContent || e.target.value;
-    changeInputValue(value);
-  };
-
-  const changeInputValue = (value) => {
     const filterRegex = new RegExp(value, 'i');
     const newOptions = dropdownOptions.filter((option) =>
       filterRegex.test(option)
@@ -109,32 +104,13 @@ const AutoComplete = () => {
     setHasText(false);
   };
 
-  const keyUpHandler = (e) => {
-    if (e.key === 'ArrowDown') {
-      const idx = (selected + 1) % options.length;
-      setSelected(idx);
-    } else if (e.key === 'ArrowUp') {
-      const idx =
-        selected < 0 ? options.length - 1 : (selected - 1) % options.length;
-      setSelected(idx);
-    } else if (e.key === 'Enter') {
-      changeInputValue(options[selected]);
-      setSelected(-1);
-    }
-  };
-
   return (
     <Wrapper hasText={hasText}>
-      <InputContainer onKeyUp={keyUpHandler}>
+      <InputContainer>
         <input
           type="text"
           value={inputValue}
-          onChange={getValue}
-          onKeyDown={(e) => {
-            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-              e.preventDefault();
-            }
-          }}
+          onChange={changeInputValue}
           autoComplete="off"
         />
         <button onClick={deleteHandler}>&#10006;</button>
@@ -142,7 +118,7 @@ const AutoComplete = () => {
       {hasText ? (
         <DropdownOptions>
           {options.map((option, idx) => (
-            <Option key={idx} onClick={getValue} selected={selected === idx}>
+            <Option key={idx} onClick={changeInputValue}>
               {option}
             </Option>
           ))}
